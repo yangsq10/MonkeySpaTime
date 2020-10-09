@@ -19,12 +19,13 @@ def urllib_download():
     utc_now = pytz.utc.localize(datetime.datetime.utcnow())
     pst_now = utc_now.astimezone(pytz.timezone("Asia/Tokyo"))
     dt_string = pst_now.strftime('%Y-%m-%d-%H-%M-%S') 
-    urlretrieve(IMAGE_URL, '/Users/shuqiyang/Desktop/Insight Program/week 3/Automatic scraping/webcam/'+dt_string+'.png')
+    urlretrieve(IMAGE_URL, 'webcam/'+dt_string+'.png')
     
 x=1
 while x<100:
     urllib_download()
     time.sleep(60*10)
+    x+=1
 
 
 # In[ ]:
