@@ -2,8 +2,8 @@ import os
 import sys
 
 
-src_path = "/Users/shuqiyang/Desktop/TrainYourOwnYOLO/2_Training/src"
-utils_path = "/Users/shuqiyang/Desktop/TrainYourOwnYOLO/Utils"
+src_path = "/TrainYourOwnYOLO/2_Training/src"
+utils_path = "/TrainYourOwnYOLO/Utils"
 
 print(src_path,utils_path)
 
@@ -14,9 +14,9 @@ sys.path.append(utils_path)
 from keras_yolo3.yolo import YOLO, detect_video
 
 
-model_path="/Users/shuqiyang/Desktop/TrainYourOwnYOLO/Data/Model_Weights/trained_weights_final.h5"
-anchors_path="/Users/shuqiyang/Desktop/TrainYourOwnYOLO/2_Training/src/keras_yolo3/model_data/yolo_anchors.txt"
-classes_path="/Users/shuqiyang/Desktop/TrainYourOwnYOLO/Data/Model_Weights/data_classes.txt"
+model_path="/TrainYourOwnYOLO/Data/Model_Weights/trained_weights_final.h5"
+anchors_path="/TrainYourOwnYOLO/2_Training/src/keras_yolo3/model_data/yolo_anchors.txt"
+classes_path="/TrainYourOwnYOLO/Data/Model_Weights/data_classes.txt"
 yolo = YOLO(
         **{
             "model_path": model_path,
@@ -50,13 +50,13 @@ x=1
 while x<300:
     out_df=pd.DataFrame()
     image=pyautogui.screenshot(region=(500,500,800,450))
-    image.save('/Users/shuqiyang/Desktop/scrapedata/pic/'+time.strftime('%Y-%m-%d-%H-%M',time.localtime(time.time()))+'.png')
-    img_path=('/Users/shuqiyang/Desktop/scrapedata/pic/'+time.strftime('%Y-%m-%d-%H-%M',time.localtime(time.time()))+'.png')
+    image.save('pic/'+time.strftime('%Y-%m-%d-%H-%M',time.localtime(time.time()))+'.png')
+    img_path=('pic/'+time.strftime('%Y-%m-%d-%H-%M',time.localtime(time.time()))+'.png')
     prediction, image = detect_object(
             yolo,
             img_path,
             save_img=time.strftime('%Y-%m-%d-%H-%M',time.localtime(time.time()))+'test.png',
-            save_img_path='/Users/shuqiyang/Desktop/TrainYourOwnYOLO/Data/Source_Images/Test_Images/',
+            save_img_path='/TrainYourOwnYOLO/Data/Source_Images/Test_Images/',
             postfix="monkeys",
             )
     y_size, x_size, _ = np.array(image).shape
@@ -88,8 +88,8 @@ while x<300:
     for i in tqdm(range(60)):
         time.sleep(0.1)
     time.sleep(60)
-out_df.to_csv("/Users/shuqiyang/Desktop/scrapedata/result.csv")
-count=pd.to_csv("/Users/shuqiyang/Desktop/scrapedata/result.csv",index=False)
+out_df.to_csv("result.csv")
+count=pd.to_csv("result.csv",index=False)
 print(count)
 
 
