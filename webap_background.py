@@ -86,7 +86,7 @@ if hour>17 or hour<9:
 )
     st.header('Last update: on '+ day + ' at 15:50 pm in Tokyo Time')
 else:
-    if datetime.datetime.strptime(time_l10,'%H-%M')<datetime.datetime.strptime(timee,'%H-%M')         <datetime.datetime.strptime(time_m10,'%H-%M'):
+    if datetime.datetime.strptime(time_l10,'%H-%M')<datetime.datetime.strptime(timee,'%H-%M')<datetime.datetime.strptime(time_m10,'%H-%M'):
         st.header(output)
     else:
         st.header("At"+ cur + "there are no monkeys")
