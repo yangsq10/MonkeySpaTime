@@ -133,7 +133,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         ''',
         unsafe_allow_html=True
         )
-        yesterday=count[count['Date']=='10/4']
+        yesterday=count[count['Date']==lastday]
         set2 = { 'x': yesterday.Time, 'y': yesterday.monkey, 'type': 'scatter', 'mode': 'lines', 'line': { 'width': 1, 'color': 'blue' },'name': 'Moving average of 12 periods'}
         data2 = [set2]
         fig2 = go.Figure(data=data2)
