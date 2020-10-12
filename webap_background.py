@@ -47,10 +47,10 @@ st.markdown(
         unsafe_allow_html=True,
     )
 
-set_png_as_page_bg('/home/ubuntu/MonkeyTime/monkey2.jpg')
+set_png_as_page_bg('monkey2.jpg')
 
 
-current_monkey=pd.read_csv("/home/ubuntu/TrainYourOwnYOLO/result.csv")
+current_monkey=pd.read_csv("result.csv")
 print(current_monkey)
 count=current_monkey[-1:]
 img=count["image"].to_string(index=False).strip()
@@ -118,10 +118,10 @@ if input and user_emailaddress:
     st.write("Successfully subscribe!")
     get_data().append({"UserID": user_emailaddress})
     email=pd.DataFrame(get_data())
-    email.to_csv('/home/ubuntu/MonkeyTime/email.csv')
+    email.to_csv('email.csv')
     
 st.sidebar.title("Check previous days:")
-count=pd.read_csv("/home/ubuntu/MonkeyTime/result plotr.csv")
+count=pd.read_csv("result.csv")
 time = st.sidebar.selectbox('', ['Yesterday', 'Last Week', 'Last Month', 'Last Year'], key='1')
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if time == 'Yesterday':
