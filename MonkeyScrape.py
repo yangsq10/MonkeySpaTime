@@ -22,7 +22,7 @@ def urllib_download():
     urlretrieve(IMAGE_URL, 'webcam/'+dt_string+'.png')
     
 x=1
-while x<100:
+while x<72:
     urllib_download()
     time.sleep(60*10)
     x+=1
