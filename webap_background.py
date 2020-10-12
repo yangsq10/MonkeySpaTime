@@ -177,6 +177,20 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         )
         st.plotly_chart(fig3)
     if time == 'Last Month':
-        st.title("Not Enough Data now")
+        st.markdown(
+        '''
+        <span style="color:white; font-weight: bold; font-size:34px">
+            Not Enough Data now <br />
+        </span>
+        ''',
+        unsafe_allow_html=True
+        )
     if time == 'Last Year':
-        st.title("Not Enough Data now")
+        st.markdown(
+        '''
+        <span style="color:white; font-weight: bold; font-size:34px">
+            Not Enough Data now <br />
+        </span>
+        ''',
+        unsafe_allow_html=True
+        )
