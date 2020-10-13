@@ -91,7 +91,7 @@ if hour>17 or hour<9:
 )
     st.header('Last update: on '+ day + ' at 15:50 pm in Tokyo Time')
 else:
-    if datetime.datetime.strptime(time_l10,'%H-%M')<datetime.datetime.strptime(timee,'%H-%M')         <datetime.datetime.strptime(time_m10,'%H-%M'):
+    if datetime.datetime.strptime(time_l10,'%H-%M')<datetime.datetime.strptime(timee,'%H-%M')<datetime.datetime.strptime(time_m10,'%H-%M'):
         st.header(output)
     else:
         st.header("At "+ hor + ':' + cur + ", there are no monkeys")
@@ -292,6 +292,20 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         )
         st.plotly_chart(fig3)
     if time == 'Last Month':
-        st.title("Not Enough Data now")
+        st.markdown(
+        '''
+        <span style="color:white; font-weight: bold; font-size:34px">
+            Not Enough Data now <br />
+        </span>
+        ''',
+        unsafe_allow_html=True
+        )
     if time == 'Last Year':
-        st.title("Not Enough Data now")
+        st.markdown(
+        '''
+        <span style="color:white; font-weight: bold; font-size:34px">
+            Not Enough Data now <br />
+        </span>
+        ''',
+        unsafe_allow_html=True
+        )
