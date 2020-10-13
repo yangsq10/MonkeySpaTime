@@ -176,10 +176,12 @@ class YOLO(object):
             server.starttls()
             server.login("email address", "password")
             context = ssl.create_default_context()
+            rec_list =  pd.read_csv('~/email.csv')
+            rec=', '.join(rec_list['UserID'])
             msg = MIMEMultipart('alternative')
             msg['Subject'] = "Time to check monkeys"
             msg['From'] = "email address"
-            msg['To'] = "email address"
+            msg['To'] = rec
             # Plain-text version of content
             plain_text = """\
             Hi there,
