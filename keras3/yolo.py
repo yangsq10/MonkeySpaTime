@@ -174,12 +174,12 @@ class YOLO(object):
             import datetime
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login("snowmonkeycheck@gmail.com", "19901024ysq")
+            server.login("email address", "password")
             context = ssl.create_default_context()
             msg = MIMEMultipart('alternative')
             msg['Subject'] = "Time to check monkeys"
-            msg['From'] = "snowmonkeycheck@gmail.com"
-            msg['To'] = "yangsqxixi@gmail.com"
+            msg['From'] = "email address"
+            msg['To'] = "email address"
             # Plain-text version of content
             plain_text = """\
             Hi there,
@@ -192,7 +192,7 @@ class YOLO(object):
             msg.attach(text_part)
 
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-    server.login("snowmonkeycheck@gmail.com", "19901024ysq")
+    server.login("email address", "password")
     server.send_message(msg)
 
 
