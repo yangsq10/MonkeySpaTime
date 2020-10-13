@@ -191,9 +191,9 @@ class YOLO(object):
             text_part = MIMEText(plain_text, 'plain')
             msg.attach(text_part)
 
-with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-    server.login("email address", "password")
-    server.send_message(msg)
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+                server.login("email address", "password")
+                server.send_message(msg)
 
 
         out_prediction = []
