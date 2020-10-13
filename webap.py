@@ -47,10 +47,10 @@ st.markdown(
         unsafe_allow_html=True,
     )
 
-set_png_as_page_bg('/home/ubuntu/MonkeyTime/monkey2.jpg')
+set_png_as_page_bg('monkey2.jpg')
 
 
-current_monkey=pd.read_csv("/home/ubuntu/TrainYourOwnYOLO/result.csv")
+current_monkey=pd.read_csv("result.csv")
 print(current_monkey)
 count=current_monkey[-1:]
 img=count["image"].to_string(index=False).strip()
@@ -123,10 +123,10 @@ if input and user_emailaddress:
     st.write("Successfully subscribe!")
     get_data().append({"UserID": user_emailaddress})
     email=pd.DataFrame(get_data())
-    email.to_csv('/home/ubuntu/MonkeyTime/email.csv')
+    email.to_csv('email.csv')
     
 st.sidebar.title("Check previous days:")
-count=pd.read_csv("/home/ubuntu/MonkeyTime/result plotr.csv")
+
 
 import requests
 import pandas as pd
@@ -149,7 +149,7 @@ import sqlite3
 import numpy as np
 import math
 
-data=pd.read_csv('~/TrainYourOwnYOLO/result.csv')
+data=pd.read_csv('result.csv')
 conn=sqlite3.connect('monkey.db')
 table_name='monkey'
 data.to_sql(table_name,conn,if_exists='replace')
@@ -269,8 +269,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         ''',
         unsafe_allow_html=True
         )
-        count['DateTime']=count['Date'] +' '+ count['Time']
-        set3 = { 'x': count.DateTime, 'y': count.monkey, 'type': 'scatter', 'mode': 'lines', 'line': { 'width': 1, 'color': 'blue' },'name': 'Moving average of 12 periods'}
+        set3 = { 'x': data4.hour, 'y': data4.num, 'type': 'scatter', 'mode': 'lines', 'line': { 'width': 1, 'color': 'blue' },'name': 'Moving average of 12 periods'}
         da3 = [set3]
         fig3 = go.Figure(data=da3)
         fig3.update_layout(
