@@ -228,7 +228,7 @@ from monkey'''.format(table_name),conn)
 data4=np.transpose(data4).reset_index()
 data4=data4.rename(columns={'index':'hour',0:'num'})
 
-data5=pd.read_sql_query('''SELECT DATE('now','start of day','-8 day','weekday 1') as start_date,
+data5=pd.read_sql_query('''SELECT DATE('now','start of day','-13 day','weekday 1') as start_date,
 DATE('now','start of day','-8 day','weekday 0') as end_date from monkey LIMIT 1'''.format(table_name),conn)
 start_date=data5['start_date'].tolist()
 end_date=data5['end_date'].tolist()
