@@ -47,7 +47,7 @@ st.markdown(
         unsafe_allow_html=True,
     )
 
-set_png_as_page_bg('monkey2.jpg')
+set_png_as_page_bg('monkey.jpg')
 
 
 current_monkey=pd.read_csv("result.csv")
@@ -123,7 +123,7 @@ if input and user_emailaddress:
     st.write("Successfully subscribe!")
     get_data().append({"UserID": user_emailaddress})
     email=pd.DataFrame(get_data())
-    email.to_csv('/home/ubuntu/MonkeyTime/email.csv')
+    email.to_csv('email.csv')
     
 st.sidebar.title("Check previous days:")
 
